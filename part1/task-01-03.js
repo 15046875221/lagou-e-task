@@ -1,3 +1,4 @@
+const { compose } = require('lodash/fp')
 const fp = require('lodash/fp')
 class MayBe {
     static of(value) {
@@ -46,3 +47,11 @@ let ex4 = (x) => {
     return MayBe.of(x).map(parseInt)._value
 }
 console.log(ex4(4.4))
+
+console.log(parseInt(null))
+
+const food = ['披萨','面条']
+const info = {lick: food[0]}
+info.lick = '面条'
+console.log(food)
+

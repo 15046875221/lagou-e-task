@@ -76,7 +76,7 @@ class MyPromise {
                 this.failedCallback = this.failedCallback.push(() => {
                     setTimeout(() => {
                         try {
-                            let x = failedCallback(this.value);
+                            let x = failedCallback(this.reason);
                             reslovePromise(promise2, x, reslove, reject)
                         } catch (error) {
                             reject(error)
@@ -109,7 +109,7 @@ class MyPromise {
             // 将数组中每个元素值依传入顺序添加进 result
             function addData(key, value) {
                 result[key] = value;
-                index++;
+                index ++;
                 // 当index与arry长度相等时，意味全部成功执行，将全部知reslove
                 if (i === arry.length) {
                     reslove(result);
